@@ -125,6 +125,9 @@ $publicaciones = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
     
+    <!-- Footer -->
+    <?php include 'includes/footer.php'; ?>
+    
     <script>
         function openImageModal(src) {
             document.getElementById('imageModal').style.display = 'block';

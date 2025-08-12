@@ -9,18 +9,26 @@
     box-sizing: border-box;
 }
 
+html {
+    min-height: 100vh;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
     min-height: 100vh;
     color: #ecf0f1;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
 }
 
+/* Hacer que el contenido principal ocupe el espacio disponible */
 .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    flex: 1; /* Esto hace que el contenido principal use todo el espacio disponible */
 }
 
 .page-title {
@@ -435,6 +443,32 @@ textarea {
     color: #ecf0f1;
 }
 
+/* Estilos para elementos de formulario específicos */
+.rating-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.rating-stars {
+    display: flex;
+    gap: 5px;
+}
+
+.rating-stars .star {
+    font-size: 2em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     .container {
         padding: 10px;
@@ -465,36 +499,32 @@ textarea {
         flex-direction: column;
         align-items: flex-start;
     }
-}
-
-/* Estilos para elementos de formulario específicos */
-.rating-input {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 15px 0;
-}
-
-.rating-stars {
-    display: flex;
-    gap: 5px;
-}
-
-.rating-stars .star {
-    font-size: 2em;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 600px) {
     .form-row {
         grid-template-columns: 1fr;
     }
+}
+
+/* Estilos específicos para el footer */
+body {
+    /* Asegurar que el footer siempre esté al bottom */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main, .container {
+    flex: 1;
+}
+
+/* Ajustar el último separador antes del footer */
+.separador:last-of-type {
+    margin-bottom: 20px;
 }
 </style>
